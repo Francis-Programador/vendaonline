@@ -47,8 +47,8 @@ header {
 }
 
 .logo_language {
-  width: 80px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 /* NAV */
@@ -286,3 +286,4 @@ footer {
     padding: 10px;
   }
 }
+
