@@ -1,107 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francis Boutique</title>
+  <title>CELSON REI DAS VENDAS</title>
   <link rel="stylesheet" href="Index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- CABEÇALHO -->
-<header>
-  <img class="logo_language" src="imagens/foto (15).jpg" alt="">
-  <h1>FRANCIS BOUTIQUE</h1>
-  <nav class="header-nav">
-    <button onclick="openNav()" class="menu-btn">☰ Menu</button>
-    <a href="conteudos/ambos/ambos.html">Produtos</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#sobre">Sobre Nós</a>
-  </nav>
-</header>
+  <!-- CABEÇALHO -->
+  <header>
+    <img class="logo_language" src="imglogo/logo celson.jpeg" alt="">
+    <h1>CELSON REI DAS VENDAS</h1>
+    <nav class="header-nav">
+      <button onclick="openNav()" class="menu-btn">☰ Menu</button>
+      <a href="Index.html">HOME</a>
+      <a href="conteudos/ambos/agendamento.html">Agendar</a>
+      <a href="sobre.html">Sobre Nós</a>
+    </nav>
+  </header>
 
-<!-- SIDEBAR OCULTA -->
-<aside id="mySidebar" class="sidebar">
-  <span class="closebtn" onclick="closeNav()">×</span>
+  <!-- SIDEBAR OCULTA -->
+  <aside id="mySidebar" class="sidebar">
+    <span class="closebtn" onclick="closeNav()">×</span>
 
-  <fieldset class="field_sidebar">
-    <legend><h2>PRODUTOS</h2></legend>
-  <ul>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-  </ul>
-  </fieldset>
-  <br>
-  <fieldset class="field_sidebar">
-    <legend><h2>PRODUTOS</h2></legend>
-  <ul>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-  </ul>
-  </fieldset>
-  <br>
-  <fieldset class="field_sidebar">
-    <legend><h2>PRODUTOS</h2></legend>
-  <ul>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Roupas</a></li>
-  </ul>
-  </fieldset>
-</aside>
+    <fieldset class="field_sidebar">
+      <legend>
+        <h2>ROUPAS</h2>
+      </legend>
+      <ul>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinas</a></li>
+        <li><a href="#">Femeninas</a></li>
+      </ul>
+    </fieldset>
+    <br>
+    <fieldset class="field_sidebar">
+      <legend>
+        <h2>ACESSORIOS</h2>
+      </legend>
+      <ul>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femeninos</a></li>
+      </ul>
+    </fieldset>
+    <br>
+    <fieldset class="field_sidebar">
+      <legend>
+        <h2>CALCADOS</h2>
+      </legend>
+      <ul>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femeninos</a></li>
+      </ul>
+    </fieldset>
+    <br>
+    <fieldset class="field_sidebar">
+      <legend>
+        <h2>PERFUMES</h2>
+      </legend>
+      <ul>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femeninos</a></li>
+      </ul>
+    </fieldset>
+  </aside>
 
-<!-- CONTEÚDO PRINCIPAL -->
-<main>
-  <!-- PRODUTOS -->
-  <section id="produtos" class="produtos">
-    <h2>Produtos</h2>
-    <div id="lista-produtos" class="grid"></div>
-  </section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <!-- PRODUTOS -->
+    <section id="produtos" class="produtos">
+      <h2>Produtos</h2>
+      <div id="lista-produtos" class="grid"></div>
+    </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-      <li>Importação de Tudo</li>
-      <li>Divulgação de Produtos</li>
-      <li>Vendas Online</li>
-      <li>Entrega Rápida</li>
-    </ul>
-  </section>
+   <!-- FORMULÁRIO DE MENSAGEM -->
+    <section id="mensagem-contato">
+      <h2>O QUE PROCURAS?</h2>
+      <form id="form-mensagem">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+        <button type="submit">Enviar pelo WhatsApp</button>
+      </form>
+    </section>
+  </main>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>Francis Boutique é a sua loja online de confiança, com produtos de qualidade e entrega rápida.</p>
-  </section>
-</main>
+  <!-- RODAPÉ -->
+  <footer id="contacto">
+    <h3>© 2025 CELSON REI DAS VENDAS</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/1BoRVgtUzh/?mibextid=wwXIfr "><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/celson_americooficial?igsh=NG5ycGFtY3kza3ht&utm_source=qr "><i class="fab fa-instagram"></i></a>
+      <a href="https:wa.me/244932563665"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@celsonamerico3?_r=1&_t=ZS-93cQB2DV3qC "><i class="fab fa-tiktok"></i></a>
 
-<!-- RODAPÉ -->
-<footer id="contacto">
-  <p>© 2025 Francis Boutique</p>
-  <div class="social-icons">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-</footer>
+    </div>
+  </footer>
 
-<script src="Index.js"></script>
+  <script src="Index.js"></script>
+  <script>
+    // FORMULÁRIO FUNCIONAL WHATSAPP
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('form-mensagem');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if(nome && email && mensagem){
+          const texto = `Olá, meu nome é ${nome} (${email}) e quero dizer: ${mensagem}`;
+          const link = `https://wa.me/244932563665?text=${encodeURIComponent(texto)}`;
+          window.open(link, '_blank'); // abre WhatsApp
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
