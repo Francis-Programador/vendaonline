@@ -450,7 +450,8 @@
       // Atualizar meta tags para compartilhamento
       document.getElementById('og-title').setAttribute('content', `${p.nome} - CELSON REI DAS VENDAS`);
       document.getElementById('og-description').setAttribute('content', `Confira este produto: ${p.nome} - ${p.preco}`);
-      document.getElementById('og-image').setAttribute('content', encodeURI(`${baseUrl}/${p.img}`));
+      // Não alteramos og:image por JS; a imagem usada é o logo do site (caminho real)
+      // document.getElementById('og-image').setAttribute('content', encodeURI(`${baseUrl}/${p.img}`));
       document.getElementById('og-url').setAttribute('content', productUrl);
       document.getElementById('meta-description').setAttribute('content', `Detalhes do produto ${p.nome} - ${p.preco} na CELSON REI DAS VENDAS.`);
 
