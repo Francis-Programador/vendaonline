@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Sitemap location for search engines
+Sitemap: https://celson-rei-das-vendas-crv.netlify.app/sitemap.xml

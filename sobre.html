@@ -13,69 +13,93 @@
 
   <!-- CABEÇALHO -->
   <header>
-    <img class="logo_language" src="imglogo/celson logo1.png" alt="">
+    <img class="logo_language" src="imglogo/logo celson.jpeg" alt="">
     <h1>CELSON REI DAS VENDAS</h1>
     <nav class="header-nav">
-      <button onclick="openNav()" class="menu-btn">☰ Menu</button>
-      <a href="Index.html">HOME</a>
+      <button class="menu-btn" onclick="openNav()">☰ Menu</button>
+      <a href="Index.html">Home</a>
       <a href="conteudos/ambos/agendamento.html">Agendar</a>
-      <a href="sobre.html">Sobre Nós</a>
+      <a href="sobre.html">Sobre</a>
+
+      <!-- Botão carrinho agora abre o mesmo sidebar -->
+      <button class="cart-btn" onclick="openNav()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
     </nav>
   </header>
 
-  <!-- SIDEBAR OCULTA -->
+  <!-- SIDEBAR ÚNICA (MENU + CARRINHO) -->
   <aside id="mySidebar" class="sidebar">
     <span class="closebtn" onclick="closeNav()">×</span>
 
+    
+    <!-- CARRINHO -->
+    <div class="cart-area">
+      <h2>Seu Carrinho</h2>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <p>Total: <span id="cart-total">--</span></p>
+        <button id="checkout-btn" class="checkout-btn">
+          Finalizar pelo WhatsApp
+        </button>
+        <button id="clear-cart" class="clear-cart">
+          Limpar carrinho
+        </button>
+      </div>
+    </div>
+
+    <hr class="sidebar-divider">
+
+    <!-- CATEGORIAS -->
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>ROUPAS</h2>
-      </legend>
+      <legend><h2>ROUPAS</h2></legend>
       <ul>
-        <li><a href="Index.html">Unissex</a></li>
-        <li><a href="Index.html">Masculinas</a></li>
-        <li><a href="Index.html">Femeninas</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinas</a></li>
+        <li><a href="#">Femininas</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>ACESSORIOS</h2>
-      </legend>
+      <legend><h2>ACESSÓRIOS</h2></legend>
       <ul>
-        <li><a href="Index.html">Unissex</a></li>
-        <li><a href="Index.html">Masculinos</a></li>
-        <li><a href="Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>CALCADOS</h2>
-      </legend>
+      <legend><h2>CALÇADOS</h2></legend>
       <ul>
-        <li><a href="Index.html">Unissex</a></li>
-        <li><a href="Index.html">Masculinos</a></li>
-        <li><a href="Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>PERFUMES</h2>
-      </legend>
+      <legend><h2>PERFUMES</h2></legend>
       <ul>
-        <li><a href="Index.html">Unissex</a></li>
-        <li><a href="Index.html">Masculinos</a></li>
-        <li><a href="Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
+
+    <hr>
+
   </aside>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main>
     <!-- SOBRE -->
     <section id="sobre-loja">
+      <h2>Sobre Nós</h2>
+        <section id="sobre">
   <h2>Sobre a Celson Rei das Vendas</h2>
 
   <p>
@@ -133,7 +157,7 @@
 
   <!-- RODAPÉ -->
   <footer id="contacto">
-    <h3>© 2025 CELSON REI DAS VENDAS</h3>
+    <h3>© 2026 CELSON REI DAS VENDAS</h3>
     <div class="social-icons">
       <a href="https://www.facebook.com/share/1BoRVgtUzh/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/celson_americooficial" target="_blank"><i class="fab fa-instagram"></i></a>

@@ -1,133 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CELSON REI DAS VENDAS</title>
+
   <link rel="stylesheet" href="Index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- CABEÇALHO -->
-  <header>
-    <img class="logo_language" src="imglogo/celson logo1.png" alt="">
-    <h1>CELSON REI DAS VENDAS</h1>
-    <nav class="header-nav">
-      <button onclick="openNav()" class="menu-btn">☰ Menu</button>
-      <a href="Index.html">HOME</a>
-      <a href="conteudos/ambos/agendamento.html">Agendar</a>
-      <a href="sobre.html">Sobre Nós</a>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header>
+  <img class="logo_language" src="imglogo/logo celson.jpeg" alt="">
+  <h1>CELSON REI DAS VENDAS</h1>
 
-  <!-- SIDEBAR OCULTA -->
-  <aside id="mySidebar" class="sidebar">
-    <span class="closebtn" onclick="closeNav()">×</span>
+  <nav class="header-nav">
+    <button class="menu-btn" onclick="openNav()">☰ Menu</button>
+    <a href="Index.html">Home</a>
+    <a href="conteudos/ambos/agendamento.html">Agendar</a>
+    <a href="sobre.html">Sobre</a>
 
-    <fieldset class="field_sidebar">
-      <legend>
-        <h2>ROUPAS</h2>
-      </legend>
-      <ul>
-        <li><a href="#">Unissex</a></li>
-        <li><a href="#">Masculinas</a></li>
-        <li><a href="#">Femeninas</a></li>
-      </ul>
-    </fieldset>
-    <br>
-    <fieldset class="field_sidebar">
-      <legend>
-        <h2>ACESSORIOS</h2>
-      </legend>
-      <ul>
-        <li><a href="#">Unissex</a></li>
-        <li><a href="#">Masculinos</a></li>
-        <li><a href="#">Femeninos</a></li>
-      </ul>
-    </fieldset>
-    <br>
-    <fieldset class="field_sidebar">
-      <legend>
-        <h2>CALCADOS</h2>
-      </legend>
-      <ul>
-        <li><a href="#">Unissex</a></li>
-        <li><a href="#">Masculinos</a></li>
-        <li><a href="#">Femeninos</a></li>
-      </ul>
-    </fieldset>
-    <br>
-    <fieldset class="field_sidebar">
-      <legend>
-        <h2>PERFUMES</h2>
-      </legend>
-      <ul>
-        <li><a href="#">Unissex</a></li>
-        <li><a href="#">Masculinos</a></li>
-        <li><a href="#">Femeninos</a></li>
-      </ul>
-    </fieldset>
-  </aside>
+    <!-- Botão carrinho agora abre o mesmo sidebar -->
+    <button class="cart-btn" onclick="openNav()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </button>
+  </nav>
+</header>
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main>
-    <!-- PRODUTOS -->
-    <section id="produtos" class="produtos">
-      <h2>Produtos</h2>
-      <div id="lista-produtos" class="grid"></div>
-    </section>
+<!-- SIDEBAR ÚNICA (MENU + CARRINHO) -->
+<aside id="mySidebar" class="sidebar">
+  <span class="closebtn" onclick="closeNav()">×</span>
 
-   <!-- FORMULÁRIO DE MENSAGEM -->
-    <section id="mensagem-contato">
-      <h2>O QUE PROCURAS?</h2>
-      <form id="form-mensagem">
-        <input type="text" id="nome" placeholder="Seu nome" required>
-        <input type="email" id="email" placeholder="Seu e-mail" required>
-        <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea>
-        <button type="submit">Enviar pelo WhatsApp</button>
-      </form>
-    </section>
-  </main>
+  
+  <!-- CARRINHO -->
+  <div class="cart-area">
+    <h2>Seu Carrinho</h2>
 
-  <!-- RODAPÉ -->
-  <footer id="contacto">
-    <h3>© 2025 CELSON REI DAS VENDAS</h3>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/share/1BoRVgtUzh/?mibextid=wwXIfr "><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/celson_americooficial?igsh=NG5ycGFtY3kza3ht&utm_source=qr "><i class="fab fa-instagram"></i></a>
-      <a href="https:wa.me/244932563665"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@celsonamerico3?_r=1&_t=ZS-93cQB2DV3qC "><i class="fab fa-tiktok"></i></a>
+    <div id="cart-items" class="cart-items"></div>
 
+    <div class="cart-summary">
+      <p>Total: <span id="cart-total">--</span></p>
+      <button id="checkout-btn" class="checkout-btn">
+        Finalizar pelo WhatsApp
+      </button>
+      <button id="clear-cart" class="clear-cart">
+        Limpar carrinho
+      </button>
     </div>
-  </footer>
+  </div>
 
-  <script src="Index.js"></script>
-  <script>
-    // FORMULÁRIO FUNCIONAL WHATSAPP
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('form-mensagem');
+  <hr class="sidebar-divider">
 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
+  <!-- CATEGORIAS -->
+  <fieldset class="field_sidebar">
+    <legend><h2>ROUPAS</h2></legend>
+    <ul>
+      <li><a href="#">Unissex</a></li>
+      <li><a href="#">Masculinas</a></li>
+      <li><a href="#">Femininas</a></li>
+    </ul>
+  </fieldset>
 
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
+  <fieldset class="field_sidebar">
+    <legend><h2>ACESSÓRIOS</h2></legend>
+    <ul>
+      <li><a href="#">Unissex</a></li>
+      <li><a href="#">Masculinos</a></li>
+      <li><a href="#">Femininos</a></li>
+    </ul>
+  </fieldset>
 
-        if(nome && email && mensagem){
-          const texto = `Olá, meu nome é ${nome} (${email}) e quero dizer: ${mensagem}`;
-          const link = `https://wa.me/244932563665?text=${encodeURIComponent(texto)}`;
-          window.open(link, '_blank'); // abre WhatsApp
-        }
-      });
-    });
-  </script>
+  <fieldset class="field_sidebar">
+    <legend><h2>CALÇADOS</h2></legend>
+    <ul>
+      <li><a href="#">Unissex</a></li>
+      <li><a href="#">Masculinos</a></li>
+      <li><a href="#">Femininos</a></li>
+    </ul>
+  </fieldset>
+
+  <fieldset class="field_sidebar">
+    <legend><h2>PERFUMES</h2></legend>
+    <ul>
+      <li><a href="#">Unissex</a></li>
+      <li><a href="#">Masculinos</a></li>
+      <li><a href="#">Femininos</a></li>
+    </ul>
+  </fieldset>
+
+  <hr>
+
+</aside>
+
+<!-- CONTEÚDO -->
+<main>
+  <!-- BUSCA E FILTROS - SEÇÃO PRINCIPAL -->
+  <section class="search-main">
+    <h2><i class="fas fa-search"></i> Encontre seus Produtos</h2>
+    
+    <div class="search-box-main">
+      <input 
+        type="text" 
+        id="search-input" 
+        class="search-input-main" 
+        placeholder="Buscar por nome, marca ou categoria..."
+        autocomplete="off"
+      >
+      <i class="fas fa-search search-icon-main"></i>
+    </div>
+
+    <div class="filters-main">
+      <div class="filter-item">
+        <label for="filter-categoria">Categoria</label>
+        <select id="filter-categoria" class="filter-select-main">
+          <option value="todos">Todas as categorias</option>
+          <option value="roupas">Roupas</option>
+          <option value="acessorios">Acessórios</option>
+          <option value="calcados">Calçados</option>
+          <option value="perfumes">Perfumes</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="filter-publico">Público</label>
+        <select id="filter-publico" class="filter-select-main">
+          <option value="todos">Todos os públicos</option>
+          <option value="unissex">Unissex</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+
+      <button id="clear-filters" class="clear-btn-main">
+        <i class="fas fa-sync-alt"></i> Limpar
+      </button>
+    </div>
+  </section>
+
+  <section class="produtos">
+    <div id="lista-produtos" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <h3>© 2026 CELSON REI DAS VENDAS</h3>
+</footer>
+
+<script src="Index.js"></script>
 </body>
-
 </html>
-
-
-

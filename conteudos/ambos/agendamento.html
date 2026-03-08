@@ -13,81 +13,239 @@
 
   <!-- CABEÇALHO -->
   <header>
-    <img class="logo_language" src="../../../imglogo/celson logo1.png" alt="">
+    <img class="logo_language" src="../../../imglogo/logo celson.jpeg" alt="">
     <h1>CELSON REI DAS VENDAS</h1>
     <nav class="header-nav">
-      <button onclick="openNav()" class="menu-btn">☰ Menu</button>
-      <a href="../../../Index.html">HOME</a>
+      <button class="menu-btn" onclick="openNav()">☰ Menu</button>
+      <a href="../../../Index.html">Home</a>
       <a href="agendamento.html">Agendar</a>
-      <a href="../../../sobre.html">Sobre Nós</a>
+      <a href="../../../sobre.html">Sobre</a>
+
+      <!-- Botão carrinho agora abre o mesmo sidebar -->
+      <button class="cart-btn" onclick="openNav()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </button>
     </nav>
   </header>
 
-  <!-- SIDEBAR OCULTA -->
+  <!-- SIDEBAR ÚNICA (MENU + CARRINHO) -->
   <aside id="mySidebar" class="sidebar">
     <span class="closebtn" onclick="closeNav()">×</span>
 
+    
+    <!-- CARRINHO -->
+    <div class="cart-area">
+      <h2>Seu Carrinho</h2>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <p>Total: <span id="cart-total">--</span></p>
+        <button id="checkout-btn" class="checkout-btn">
+          Finalizar pelo WhatsApp
+        </button>
+        <button id="clear-cart" class="clear-cart">
+          Limpar carrinho
+        </button>
+      </div>
+    </div>
+
+    <hr class="sidebar-divider">
+
+    <!-- CATEGORIAS -->
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>ROUPAS</h2>
-      </legend>
+      <legend><h2>ROUPAS</h2></legend>
       <ul>
-        <li><a href="../../../Index.html">Unissex</a></li>
-        <li><a href="../../../Index.html">Masculinas</a></li>
-        <li><a href="../../../Index.html">Femeninas</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinas</a></li>
+        <li><a href="#">Femininas</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>ACESSORIOS</h2>
-      </legend>
+      <legend><h2>ACESSÓRIOS</h2></legend>
       <ul>
-        <li><a href="../../../Index.html">Unissex</a></li>
-        <li><a href="../../../Index.html">Masculinos</a></li>
-        <li><a href="../../../Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>CALCADOS</h2>
-      </legend>
+      <legend><h2>CALÇADOS</h2></legend>
       <ul>
-        <li><a href="../../../Index.html">Unissex</a></li>
-        <li><a href="../../../Index.html">Masculinos</a></li>
-        <li><a href="../../../Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
-    <br>
+
     <fieldset class="field_sidebar">
-      <legend>
-        <h2>PERFUMES</h2>
-      </legend>
+      <legend><h2>PERFUMES</h2></legend>
       <ul>
-        <li><a href="../../../Index.html">Unissex</a></li>
-        <li><a href="../../../Index.html">Masculinos</a></li>
-        <li><a href="../../../Index.html">Femeninos</a></li>
+        <li><a href="#">Unissex</a></li>
+        <li><a href="#">Masculinos</a></li>
+        <li><a href="#">Femininos</a></li>
       </ul>
     </fieldset>
+
+    <hr>
+
   </aside>
 
   <!-- CONTEÚDO PRINCIPAL -->
   <main>
-    <!-- SOBRE -->
-    <section id="sobre-loja">
-      <h2>PEDIDO DE AGENDAMENTO</h2>
-      <P>
-        Aba não disponivel
-      </P>
-        
+    <!-- AGENDAMENTO -->
+    <section id="agendamento-section">
+      <h2>Agende seu Atendimento</h2>
+      <p class="intro-text">Preencha o formulário abaixo para agendar um horário conveniently. Entraremos em contato para confirmar.</p>
+      
+      <div class="agendamento-container">
+        <form id="form-agendamento" class="agendamento-form">
+          
+          <!-- SEÇÃO: DADOS PESSOAIS -->
+          <fieldset class="form-section">
+            <legend>Dados Pessoais</legend>
+            
+            <div class="form-group">
+              <label for="nome">Nome Completo *</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="+244 9XX XXX XXX" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cidade">Cidade *</label>
+              <input type="text" id="cidade" name="cidade" placeholder="Sua cidade" required>
+            </div>
+          </fieldset>
+
+          <!-- SEÇÃO: AGENDAMENTO -->
+          <fieldset class="form-section">
+            <legend>Data e Horário</legend>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="data">Data do Agendamento *</label>
+                <input type="date" id="data" name="data" required>
+              </div>
+
+              <div class="form-group">
+                <label for="hora">Horário Preferido *</label>
+                <input type="time" id="hora" name="hora" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- SEÇÃO: TIPO DE SERVIÇO -->
+          <fieldset class="form-section">
+            <legend>Tipo de Serviço</legend>
+            
+            <div class="form-group">
+              <label for="tipo-servico">Selecione o Tipo de Serviço *</label>
+              <select id="tipo-servico" name="tipo-servico" required>
+                <option value="">-- Escolha um tipo --</option>
+                <option value="consulta">Consulta de Produtos</option>
+                <option value="prova">Prova de Roupas</option>
+                <option value="entrega">Entrega e Acompanhamento</option>
+                <option value="manutencao">Manutenção de Produtos</option>
+                <option value="devolucao">Devolução/Troca</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="categoria">Categoria de Interesse *</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">-- Escolha uma categoria --</option>
+                <option value="roupas-unissex">Roupas - Unissex</option>
+                <option value="roupas-masculinas">Roupas - Masculinas</option>
+                <option value="roupas-femininas">Roupas - Femininas</option>
+                <option value="acessorios-unissex">Acessórios - Unissex</option>
+                <option value="acessorios-masculinos">Acessórios - Masculinos</option>
+                <option value="acessorios-femininos">Acessórios - Femininos</option>
+                <option value="calcados-unissex">Calçados - Unissex</option>
+                <option value="calcados-masculinos">Calçados - Masculinos</option>
+                <option value="calcados-femininos">Calçados - Femininos</option>
+                <option value="perfumes-unissex">Perfumes - Unissex</option>
+                <option value="perfumes-masculinos">Perfumes - Masculinos</option>
+                <option value="perfumes-femininos">Perfumes - Femininos</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- SEÇÃO: OBSERVAÇÕES -->
+          <fieldset class="form-section">
+            <legend>Observações Adicionais</legend>
+            
+            <div class="form-group">
+              <label for="observacoes">Alguma observação especial?</label>
+              <textarea id="observacoes" name="observacoes" placeholder="Digite qualquer informação importante... (opcional)" rows="5"></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label for="confirmar">
+                <input type="checkbox" id="confirmar" name="confirmar" required>
+                Confirmo que as informações acima estão corretas *
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- BOTÕES -->
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-check-circle"></i> Confirmar Agendamento
+            </button>
+            <button type="reset" class="btn-reset">
+              <i class="fas fa-redo"></i> Limpar Formulário
+            </button>
+          </div>
+
+        </form>
+
+        <!-- INFORMAÇÕES LATERAIS -->
+        <div class="agendamento-info">
+          <h3>Informações Importantes</h3>
+          <ul>
+            <li><strong>Horário de Funcionamento:</strong> Segunda a Sábado, 8h às 18h</li>
+            <li><strong>Confirmação:</strong> Você receberá uma mensagem no WhatsApp</li>
+            <li><strong>Local:</strong> Luanda, Angola</li>
+            <li><strong>Suporte:</strong> Fale conosco para dúvidas</li>
+          </ul>
+
+          <h3 style="margin-top: 2rem;">Contate-nos Diretamente</h3>
+          <div class="contact-fast">
+            <a href="https://wa.me/244932563665?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento" target="_blank" class="btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="tel:+244932563665" class="btn-phone">
+              <i class="fas fa-phone"></i> Telefonar
+            </a>
+            <a href="mailto:celsonamerico10@gmail.com" class="btn-email">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main>
 
   <!-- RODAPÉ -->
   <footer id="contacto">
-    <h3>© 2025 CELSON REI DAS VENDAS</h3>
+    <h3>© 2026 CELSON REI DAS VENDAS</h3>
     <div class="social-icons">
       <a href="https://www.facebook.com/share/1BoRVgtUzh/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/celson_americooficial" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -99,26 +257,51 @@
 
   <script src="../../../Index.js"></script>
   <script>
-    // FORMULÁRIO FUNCIONAL WHATSAPP
+    // FORMULÁRIO DE AGENDAMENTO FUNCIONAL
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('form-mensagem');
+      const form = document.getElementById('form-agendamento');
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         const nome = document.getElementById('nome').value.trim();
         const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const cidade = document.getElementById('cidade').value.trim();
+        const data = document.getElementById('data').value;
+        const hora = document.getElementById('hora').value;
+        const tipoServico = document.getElementById('tipo-servico').value;
+        const categoria = document.getElementById('categoria').value;
+        const observacoes = document.getElementById('observacoes').value.trim();
 
-        if(nome && email && mensagem){
-          const texto = `Olá, meu nome é ${nome} (${email}) e quero dizer: ${mensagem}`;
+        if(nome && email && telefone && cidade && data && hora && tipoServico && categoria){
+          const texto = `*AGENDAMENTO DE ATENDIMENTO*\n\n` +
+            `👤 *Nome:* ${nome}\n` +
+            `📧 *Email:* ${email}\n` +
+            `📱 *Telefone:* ${telefone}\n` +
+            `🏙️ *Cidade:* ${cidade}\n` +
+            `📅 *Data:* ${new Date(data).toLocaleDateString('pt-BR')}\n` +
+            `🕐 *Horário:* ${hora}\n` +
+            `🔧 *Tipo de Serviço:* ${tipoServico}\n` +
+            `📦 *Categoria:* ${categoria}\n` +
+            (observacoes ? `📝 *Observações:* ${observacoes}\n` : '') +
+            `\nPor favor, confirme o agendamento.`;
+
           const link = `https://wa.me/244932563665?text=${encodeURIComponent(texto)}`;
-          window.open(link, '_blank'); // abre WhatsApp
+          window.open(link, '_blank');
+
+          // Limpar form após enviar
+          form.reset();
+          alert('Agendamento enviado! Você receberá uma confirmação via WhatsApp.');
         }
       });
+
+      // Set data mínima como hoje
+      const dataInput = document.getElementById('data');
+      const hoje = new Date().toISOString().split('T')[0];
+      dataInput.setAttribute('min', hoje);
     });
   </script>
 
 </body>
 </html>
-

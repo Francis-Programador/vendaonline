@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://celson-rei-das-vendas-crv.netlify.app/</loc>
+    <lastmod>2026-02-09</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://celson-rei-das-vendas-crv.netlify.app/sobre.html</loc>
+    <lastmod>2026-02-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://celson-rei-das-vendas-crv.netlify.app/conteudos/ambos/agendamento.html</loc>
+    <lastmod>2026-02-09</lastmod>
+    <priority>0.65</priority>
+  </url>
+</urlset>
