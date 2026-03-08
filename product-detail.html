@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalhe do Produto - CELSON REI DAS VENDAS</title>
+  <meta name="description" content="Detalhes do produto na CELSON REI DAS VENDAS - Veja preços, imagens e informações completas dos melhores acessórios, calçados, perfumes e roupas." id="meta-description">
   <meta property="og:title" content="Detalhe do Produto - CELSON REI DAS VENDAS" id="og-title">
   <meta property="og:description" content="Confira este produto incrível da CELSON REI DAS VENDAS" id="og-description">
   <meta property="og:image" content="https://celson-rei-das-vendas-crv.netlify.app/imagenspdt/acessorios/JPG/foto%20(1).JPG" id="og-image">
@@ -450,6 +451,7 @@
       document.getElementById('og-description').setAttribute('content', `Confira este produto: ${p.nome} - ${p.preco}`);
       document.getElementById('og-image').setAttribute('content', `${baseUrl}/${p.img}`);
       document.getElementById('og-url').setAttribute('content', productUrl);
+      document.getElementById('meta-description').setAttribute('content', `Detalhes do produto ${p.nome} - ${p.preco} na CELSON REI DAS VENDAS.`);
 
       const html = `
         <div class="product-image">
