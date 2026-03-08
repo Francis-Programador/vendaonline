@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalhe do Produto - CELSON REI DAS VENDAS</title>
+  <meta property="og:title" content="Detalhe do Produto - CELSON REI DAS VENDAS" id="og-title">
+  <meta property="og:description" content="Confira este produto incrível da CELSON REI DAS VENDAS" id="og-description">
+  <meta property="og:image" content="https://celson-rei-das-vendas-crv.netlify.app/imagenspdt/acessorios/JPG/foto%20(1).JPG" id="og-image">
+  <meta property="og:url" content="https://celson-rei-das-vendas-crv.netlify.app/product-detail.html" id="og-url">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="Index.css">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -439,6 +444,12 @@
       const baseUrl = 'https://celson-rei-das-vendas-crv.netlify.app';
       const productUrl = `${baseUrl}/product-detail.html?id=${productIndex}`;
       const shareText = `Confira este produto: ${p.nome} - ${p.preco} - ${baseUrl}`;
+
+      // Atualizar meta tags para compartilhamento
+      document.getElementById('og-title').setAttribute('content', `${p.nome} - CELSON REI DAS VENDAS`);
+      document.getElementById('og-description').setAttribute('content', `Confira este produto: ${p.nome} - ${p.preco}`);
+      document.getElementById('og-image').setAttribute('content', `${baseUrl}/${p.img}`);
+      document.getElementById('og-url').setAttribute('content', productUrl);
 
       const html = `
         <div class="product-image">
