@@ -3,15 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CELSON REI DAS VENDAS</title>
+
   <meta name="description" content="Loja online CELSON REI DAS VENDAS - Encontre acessórios, calçados, perfumes e roupas com preços incríveis. Qualidade e variedade para todos os gostos!">
+
+  <!-- OPEN GRAPH (PRÉVIA AO COMPARTILHAR) -->
   <meta property="og:title" content="CELSON REI DAS VENDAS">
   <meta property="og:description" content="Loja online de acessórios, calçados, perfumes e roupas. Encontre os melhores produtos com preços incríveis!">
   <meta property="og:image" content="https://celson-rei-das-vendas-crv.netlify.app/imglogo/logo-celson.jpeg">
   <meta property="og:url" content="https://celson-rei-das-vendas-crv.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CELSON REI DAS VENDAS">
+
+  <!-- TWITTER CARD (opcional, mas recomendado) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CELSON REI DAS VENDAS">
+  <meta name="twitter:description" content="Loja online de acessórios, calçados, perfumes e roupas.">
+  <meta name="twitter:image" content="https://celson-rei-das-vendas-crv.netlify.app/imglogo/logo-celson.jpeg">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="Index.css">
+
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -19,7 +33,7 @@
 
 <!-- HEADER -->
 <header>
-  <img class="logo_language" src="imglogo/logo-celson.jpeg" alt="">
+  <img class="logo_language" src="imglogo/logo-celson.jpeg" alt="Logo">
   <h1>CELSON REI DAS VENDAS</h1>
 
   <nav class="header-nav">
@@ -28,7 +42,6 @@
     <a href="conteudos/ambos/agendamento.html">Agendar</a>
     <a href="sobre.html">Sobre</a>
 
-    <!-- Botão carrinho agora abre o mesmo sidebar -->
     <button class="cart-btn" onclick="openNav()">
       <i class="fas fa-shopping-cart"></i>
       <span id="cart-count">0</span>
@@ -36,12 +49,10 @@
   </nav>
 </header>
 
-<!-- SIDEBAR ÚNICA (MENU + CARRINHO) -->
+<!-- SIDEBAR -->
 <aside id="mySidebar" class="sidebar">
   <span class="closebtn" onclick="closeNav()">×</span>
 
-  
-  <!-- CARRINHO -->
   <div class="cart-area">
     <h2>Seu Carrinho</h2>
 
@@ -60,7 +71,6 @@
 
   <hr class="sidebar-divider">
 
-  <!-- CATEGORIAS -->
   <fieldset class="field_sidebar">
     <legend><h2>ROUPAS</h2></legend>
     <ul>
@@ -97,30 +107,23 @@
     </ul>
   </fieldset>
 
-  <hr>
-
 </aside>
 
 <!-- CONTEÚDO -->
 <main>
-  <!-- BUSCA E FILTROS - SEÇÃO PRINCIPAL -->
+
+  <!-- BUSCA -->
   <section class="search-main">
     <h2><i class="fas fa-search"></i> Encontre seus Produtos</h2>
-    
+
     <div class="search-box-main">
-      <input 
-        type="text" 
-        id="search-input" 
-        class="search-input-main" 
-        placeholder="Buscar por nome, marca ou categoria..."
-        autocomplete="off"
-      >
+      <input type="text" id="search-input" class="search-input-main" placeholder="Buscar por nome, marca ou categoria..." autocomplete="off">
       <i class="fas fa-search search-icon-main"></i>
     </div>
 
     <div class="filters-main">
       <div class="filter-item">
-        <label for="filter-categoria">Categoria</label>
+        <label>Categoria</label>
         <select id="filter-categoria" class="filter-select-main">
           <option value="todos">Todas as categorias</option>
           <option value="roupas">Roupas</option>
@@ -131,9 +134,9 @@
       </div>
 
       <div class="filter-item">
-        <label for="filter-publico">Público</label>
+        <label>Público</label>
         <select id="filter-publico" class="filter-select-main">
-          <option value="todos">Todos os públicos</option>
+          <option value="todos">Todos</option>
           <option value="unissex">Unissex</option>
           <option value="masculino">Masculino</option>
           <option value="feminino">Feminino</option>
@@ -146,15 +149,20 @@
     </div>
   </section>
 
+  <!-- PRODUTOS -->
   <section class="produtos">
     <div id="lista-produtos" class="grid"></div>
   </section>
+
 </main>
 
+<!-- FOOTER -->
 <footer>
   <h3>© 2026 CELSON REI DAS VENDAS</h3>
 </footer>
 
+<!-- JS -->
 <script src="Index.js"></script>
+
 </body>
 </html>
